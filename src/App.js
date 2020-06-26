@@ -4,12 +4,18 @@ import Countdown from 'react-countdown';
 
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  return (
-    <div>
-      <div className="countdown">{days}  : {hours}  : {minutes}  : {seconds}</div>
-      <div className="countdown-text">days : hours : minutes : seconds</div>
-    </div>
-  );
+  if (completed) {
+    return (
+      <div className="completed">it's time!</div>
+    );
+  } else {
+    return (
+      <div>
+        <div className="countdown">{days}  : {hours}  : {minutes}  : {seconds}</div>
+        <div className="countdown-text">days : hours : minutes : seconds</div>
+      </div>
+    );
+  }
 };
 
 const tick = (event) => {
