@@ -1,0 +1,35 @@
+:root {
+    --container-padding-top: 20vh;
+    --countdown-font-size: 12em;
+    --countdown-text-font-size: 5em;
+}
+
+@font-face {
+    font-family: 'digital-7';
+    src: local('digital-7'), url(assets/fonts/digital-7.ttf) format('woff');
+}
+
+.container {
+    text-align: center;
+    padding-top: var(--container-padding-top);
+}
+
+.countdown {
+    font-size: var(--countdown-font-size);
+    color: red;
+    font-family: "digital-7" ,"Courier New", Courier, monospace;
+    text-align: justify;
+}
+
+.countdown-text {
+    font-size: var(--countdown-text-font-size);
+    color: white;
+    font-family: "digital-7" ,"Courier New", Courier, monospace;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --container-padding-top: 30vh;
+        --countdown-font-size: 4em;   
+    }
+}
