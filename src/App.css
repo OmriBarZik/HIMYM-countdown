@@ -18,7 +18,6 @@
     font-size: var(--countdown-font-size);
     color: red;
     font-family: "digital-7" ,"Courier New", Courier, monospace;
-    text-align: justify;
 }
 
 .countdown-text {
@@ -30,6 +29,10 @@
 @media only screen and (max-width: 600px) {
     :root {
         --container-padding-top: 30vh;
-        --countdown-font-size: 4em;   
+        --countdown-font-size: 4em;
+        --countdown-text-font-size: 1.5em;
+    }
+    .countdown-text {
+        padding-top: 20px;
     }
 }

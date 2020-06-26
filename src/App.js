@@ -6,10 +6,8 @@ import Countdown from 'react-countdown';
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   return (
     <div>
-      <span className="countdown">
-        {days}  : {hours}  : {minutes}  : {seconds}
-      </span><br />
-      <span className="countdown-text">days : hours : minutes : seconds</span>
+      <div className="countdown">{days}  : {hours}  : {minutes}  : {seconds}</div>
+      <div className="countdown-text">days : hours : minutes : seconds</div>
     </div>
   );
 };
