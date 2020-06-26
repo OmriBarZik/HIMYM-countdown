@@ -26,6 +26,19 @@
     font-family: "digital-7" ,"Courier New", Courier, monospace;
 }
 
+.completed {
+    font-size: var(--countdown-font-size);
+    color: red;
+    font-family: "digital-7" ,"Courier New", Courier, monospace;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
 @media only screen and (max-width: 600px) {
     :root {
         --container-padding-top: 30vh;
