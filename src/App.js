@@ -25,7 +25,7 @@ const tick = (event) => {
 function App() {
   return (
     <div className="container">
-      <Countdown date={new Date(2020, 5, 28, 10)} onTick={tick} renderer={renderer} />
+      <Countdown date={new Date(2020, 5, 28, 0)} onTick={tick} renderer={renderer} />
     </div>
   );
 }
