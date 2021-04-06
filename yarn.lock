@@ -8000,10 +8000,10 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.3.2
     "@testing-library/user-event": ^7.1.2
-    react: latest
+    react: ^17.0.2
     react-countdown: ^2.2.1
-    react-dom: latest
-    react-scripts: latest
+    react-dom: ^17.0.2
+    react-scripts: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -13182,7 +13182,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dom@npm:latest":
+"react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -13223,7 +13223,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-scripts@npm:latest":
+"react-scripts@npm:^4.0.3":
   version: 4.0.3
   resolution: "react-scripts@npm:4.0.3"
   dependencies:
@@ -13301,7 +13301,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:latest":
+"react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
