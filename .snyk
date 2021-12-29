@@ -1,0 +1,35 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ANSIHTML-1296849:
+    - react-scripts > @pmmmwh/react-refresh-webpack-plugin > ansi-html:
+        reason: None given
+        expires: '2022-01-28T12:39:36.666Z'
+    - react-scripts > webpack-dev-server > ansi-html:
+        reason: None given
+        expires: '2022-01-28T12:39:36.666Z'
+  SNYK-JS-ANSIREGEX-1583908:
+    - react-scripts > webpack-dev-server > yargs > cliui > string-width > strip-ansi > ansi-regex:
+        reason: None given
+        expires: '2022-01-28T12:39:36.666Z'
+  SNYK-JS-CSSWHAT-1298035:
+    - react-scripts > @svgr/webpack > @svgr/plugin-svgo > svgo > css-select > css-what:
+        reason: None given
+        expires: '2022-01-28T12:39:36.666Z'
+  SNYK-JS-GLOBPARENT-1016905:
+    - react-scripts > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
+        reason: None given
+        expires: '2022-01-28T12:39:36.667Z'
+  SNYK-JS-LODASHTEMPLATE-1088054:
+    - react-scripts > postcss-preset-env > postcss-initial > lodash.template:
+        reason: None given
+        expires: '2022-01-28T12:39:36.667Z'
+    - react-scripts > workbox-webpack-plugin > workbox-build > lodash.template:
+        reason: None given
+        expires: '2022-01-28T12:39:36.667Z'
+  SNYK-JS-NTHCHECK-1586032:
+    - react-scripts > @svgr/webpack > @svgr/plugin-svgo > svgo > css-select > nth-check:
+        reason: None given
+        expires: '2022-01-28T12:39:36.667Z'
+patch: {}
