@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/HIMYM-countdown/static/css/main.db2ceb6f.css",
-    "main.js": "/HIMYM-countdown/static/js/main.d559fb6b.js",
+    "main.css": "/HIMYM-countdown/static/css/main.d31f5fb8.css",
+    "main.js": "/HIMYM-countdown/static/js/main.480f51c4.js",
     "static/media/digital-7.ttf": "/HIMYM-countdown/static/media/digital-7.93911ab167c943140756.ttf",
     "index.html": "/HIMYM-countdown/index.html",
-    "main.db2ceb6f.css.map": "/HIMYM-countdown/static/css/main.db2ceb6f.css.map",
-    "main.d559fb6b.js.map": "/HIMYM-countdown/static/js/main.d559fb6b.js.map"
+    "main.d31f5fb8.css.map": "/HIMYM-countdown/static/css/main.d31f5fb8.css.map",
+    "main.480f51c4.js.map": "/HIMYM-countdown/static/js/main.480f51c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.db2ceb6f.css",
-    "static/js/main.d559fb6b.js"
+    "static/css/main.d31f5fb8.css",
+    "static/js/main.480f51c4.js"
   ]
 }
