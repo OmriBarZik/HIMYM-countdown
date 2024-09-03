@@ -1,51 +1,66 @@
 :root {
-    --container-padding-top: 20vh;
-    --countdown-font-size: 12em;
-    --countdown-text-font-size: 5em;
+  --container-padding-top: 20vh;
+  --countdown-font-size: 12em;
+  --countdown-text-font-size: 5em;
 }
 
 @font-face {
-    font-family: 'digital-7';
-    src: local('digital-7'), url(assets/fonts/digital-7.ttf) format('woff');
+  font-family: "digital-7";
+  src: local("digital-7"), url(assets/fonts/digital-7-mono.ttf) format("woff");
 }
 
 .container {
-    text-align: center;
-    padding-top: var(--container-padding-top);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--container-padding-top);
 }
 
-.countdown {
-    font-size: var(--countdown-font-size);
-    color: red;
-    font-family: "digital-7" ,"Courier New", Courier, monospace;
+.countdown-grid {
+  display: grid;
+  width: max-content;
+  font-family: "digital-7", "Courier New", Courier, monospace;
+  color: red;
+  grid-template-columns: repeat(3, 1fr 1em) 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . ."
+    ". . . . . . .";
 }
 
-.countdown-text {
-    font-size: var(--countdown-text-font-size);
-    color: white;
-    font-family: "digital-7" ,"Courier New", Courier, monospace;
+.countdown-grid > span {
+  font-size: var(--countdown-font-size);
+}
+
+.countdown-grid > .text {
+  margin: 1rem 1rem;
+  font-size: var(--countdown-text-font-size);
+  color: white;
+  font-family: "digital-7", "Courier New", Courier, monospace;
 }
 
 .completed {
-    font-size: var(--countdown-font-size);
-    color: red;
-    font-family: "digital-7" ,"Courier New", Courier, monospace;
-    animation: blinker 1s linear infinite;
+  font-size: var(--countdown-font-size);
+  color: red;
+  font-family: "digital-7", "Courier New", Courier, monospace;
+  animation: blinker 1s linear infinite;
 }
 
 @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
+  50% {
+    opacity: 0;
   }
+}
 
 @media only screen and (max-width: 600px) {
-    :root {
-        --container-padding-top: 30vh;
-        --countdown-font-size: 4em;
-        --countdown-text-font-size: 1.5em;
-    }
-    .countdown-text {
-        padding-top: 20px;
-    }
+  :root {
+    --container-padding-top: 30vh;
+    --countdown-font-size: 4em;
+    --countdown-text-font-size: 1.5em;
+  }
+  .countdown-text {
+    padding-top: 20px;
+  }
 }

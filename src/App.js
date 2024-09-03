@@ -1,18 +1,29 @@
-import React from 'react';
-import './App.css';
-import Countdown from 'react-countdown';
+import React from "react";
+import "./App.css";
+import Countdown from "react-countdown";
 
+const addLeadingZero = (num) => (num.toString().length < 2 ? `0${num}` : num);
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
-    return (
-      <div className="completed">it's time!</div>
-    );
+    return <div className="completed">it's time!</div>;
   } else {
     return (
-      <div>
-        <div className="countdown">{days}  : {hours}  : {minutes}  : {seconds}</div>
-        <div className="countdown-text">days : hours : minutes : seconds</div>
+      <div className="countdown-grid">
+        <span>{addLeadingZero(days)}</span>
+        <span>:</span>
+        <span>{addLeadingZero(hours)}</span>
+        <span>:</span>
+        <span>{addLeadingZero(minutes)}</span>
+        <span>:</span>
+        <span>{addLeadingZero(seconds)}</span>
+        <span className="text">days</span>
+        <span className="text">:</span>
+        <span className="text">hours</span>
+        <span className="text">:</span>
+        <span className="text">minutes</span>
+        <span className="text">:</span>
+        <span className="text">seconds</span>
       </div>
     );
   }
@@ -24,18 +35,18 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 const getDateFromPrams = () => {
   const search = new URLSearchParams(window.location.search);
 
-  const now = new Date(Date.now())
+  const now = new Date(Date.now());
 
-  const err = []
+  const err = [];
 
   const params = {
-    'year': now.getFullYear(),
-    'month': now.getMonth(),
-    'date': now.getDate(),
-    'hours': now.getHours() + 1,
-    'minutes': now.getMinutes(),
-    'seconds': now.getSeconds(),
-  }
+    year: now.getFullYear(),
+    month: now.getMonth(),
+    date: now.getDate(),
+    hours: now.getHours() + 1,
+    minutes: now.getMinutes(),
+    seconds: now.getSeconds(),
+  };
 
   for (const key in params) {
     if (!Object.hasOwnProperty.call(params, key)) {
@@ -47,23 +58,48 @@ const getDateFromPrams = () => {
     }
 
     if (isNaN(search.get(key))) {
-      err.push(new Error(`${key} must be an integer!`))
+      err.push(new Error(`${key} must be an integer!`));
       continue;
     }
 
-    params[key] = Number.parseInt(search.get(key))
-
+    params[key] = Number.parseInt(search.get(key));
   }
 
-  const date = new Date(params.year, params.month, params.date, params.hours, params.minutes, params.seconds)
+  const date = new Date(
+    params.year,
+    params.month,
+    params.date,
+    params.hours,
+    params.minutes,
+    params.seconds
+  );
 
-  return { date, err }
-}
+  return { date, err };
+};
 
 function App() {
-  const { date, err } = getDateFromPrams()
+  const { date, err } = getDateFromPrams();
 
-  const errDiv = err.map((err, i) => <div key={i} style={{ border: "1px solid black", fontSize: '1.5em', width: '100vw', backgroundColor: '#dc3545', height: '30px', left: 0, top: `${i * 30}px`, position: 'absolute', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{err.message}</div>)
+  const errDiv = err.map((err, i) => (
+    <div
+      key={i}
+      style={{
+        border: "1px solid black",
+        fontSize: "1.5em",
+        width: "100vw",
+        backgroundColor: "#dc3545",
+        height: "30px",
+        left: 0,
+        top: `${i * 30}px`,
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {err.message}
+    </div>
+  ));
 
   return (
     <div>
