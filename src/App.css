@@ -14,31 +14,42 @@
   align-items: center;
   justify-content: center;
   padding-top: var(--container-padding-top);
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .countdown-grid {
   display: grid;
-  width: max-content;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: auto auto;
+  gap: 0.6rem 1rem;
+  align-items: center;
+  justify-content: center;
   font-family: "digital-7", "Courier New", Courier, monospace;
   color: red;
-  grid-template-columns: repeat(3, 1fr 1em) 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . . . . . ."
-    ". . . . . . .";
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0.5rem;
 }
 
 .countdown-grid > span {
-  font-size: var(--countdown-font-size);
+  font-size: clamp(2.5rem, 10vw, 8rem);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .countdown-grid > .text {
-  margin: 1rem 1rem;
-  font-size: var(--countdown-text-font-size);
+  margin: 0.25rem 0.25rem;
+  font-size: clamp(0.8rem, 3.2vw, 1.8rem);
   color: white;
   font-family: "digital-7", "Courier New", Courier, monospace;
+  white-space: nowrap;
+  grid-row: 2;
+  text-align: center;
 }
 
 .completed {
@@ -62,5 +73,8 @@
   }
   .countdown-text {
     padding-top: 20px;
+  }
+  .countdown-grid {
+    gap: 0.6rem;
   }
 }
